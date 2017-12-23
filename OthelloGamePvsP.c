@@ -128,12 +128,13 @@ void ArrangementBlack() {
 
 	if (x == 199 || y == 199) {
 		printf("終了します\n");
-		WinLose();
+		return WinLose();
+		exit(1);
 	}
 	if (player % 2 == PLAYER1) {
 		if (board[y][x] != EMPTY) {
 			printf("そこには置けません。\n");
-			//field_print2();
+			field_print2();
 			return ArrangementBlack();
 		}
 	}
@@ -152,12 +153,12 @@ void ArrangementWhite() {
 		printf("パスします。\n");
 		field_print2();
 		player++;
-		return ArrangementBlack();
 	}
 
 	if (x == 199 || y == 199) {
 		printf("終了します\n");
-		WinLose();
+		return WinLose();
+		exit(1);
 	}
 
 	if (player % 2 == PLAYER2) {
